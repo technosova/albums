@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Template Basic Images Start -->
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="icon" href="img/favicon/img.png">
+    <!-- Template Basic Images End -->
+    <meta name="theme-color" content="#000">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+
+<body>
+<!-- Header -->
+<header>
+    <div class="container-fluid navbar">
+        <div class="row align-items-center">
+            <div class="navbar__box col">
+                <div class="row align-items-center">
+
+                    <div class="navbar__logo col-auto">
+                        <a href="#"><img src="img/logo.ico" alt="logo" class="logo"></a>
+                    </div>
+
+                    <div class="navbar__nav navbar__nav_first col-auto d-lg-flex ">
+                        <ul>
+                            <li><a href="#" id="albumBlockMenu">Альбомы</a></li>
+                            <li><a href="#" id="authorBlockMenu">Авторы</a></li>
+                        </ul>
+
+                    </div>
+                    <button class="btn-random" id="btnRandom"></button>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</header>
+<!-- End Header -->
+
+<!-- Content -->
+<body>
+<div class="container">
+    <div class="card-block" id="cardCreateBlock">
+        <div class="row">
+            <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-6 col-12">
+                <p class="card-block-name">Удалить</p>
+                <p class="card-block-name__min">карточку</p>
+                <input class="card-gelete-block__number" id="card-gelete-block__number"
+                       placeholder="Введите номер карточки" type="number">
+                <button class="card-delete-block__btn" id="card-delete-block__btn"> Удалить</button>
+            </div>
+            <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-6 col-12">
+                <p class="card-block-name">Создать</p>
+                <p class="card-block-name__min">карточку</p>
+                <button class="card-create-block__btn-random" id="card-create-block__btn-random"></button>
+                <input class="card-create-block card-create-block__image" id="Image-Card" type="text"
+                       placeholder="Ссылка на изображение">
+                <input class="card-create-block card-create-block__caption" type="text" placeholder="Название" required
+                       maxlength="18">
+                <input class=" card-create-block card-create-block__name" type="text" placeholder="Фамилия Имя" required
+                       maxlength="28">
+                <button class="card-create-block__btn" id="card-create-block__btn"> Создать</button>
+
+            </div>
+            <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-6 col-12">
+                <p class="card-block-name">Добавить</p>
+                <p class="card-block-name__min">карточку</p>
+                <button class="card-add-block__btn" onclick="funcAdd()"> Добавить</button>
+            </div>
+            <div class=" col-lg-3 col-md-3 col-sm-3 col-xs-6 col-12" id="recovery-block">
+                <p class="card-block-name">Восстановить</p>
+                <p class="card-block-name__min">карточку</p>
+                <button class="card-recovery-block__btn" id="card-recovery-block__btn"> Восстановить</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-galery" id="cardBlockId">
+        <p class="card-block-name">Альбомы</p>
+        <div>
+            <section class="cardFiltr">
+                <label class="select-label">Название:</label>
+                <select id="selectCaption" class="cs-select cs-skin-rotate card-select">
+                    <option class="selectCaption" value="1">Не выбрано</option>
+                    <option class="selectCaption" value="2">По возрастанию</option>
+                    <option class="selectCaption" value="3">По убыванию</option>
+                </select>
+
+                <label class="select-label">Автор:</label>
+                <select id="selectName" class="cs-select cs-skin-rotate card-select">
+                    <option class="selectName" value="1">Не выбрано</option>
+                    <option class="selectName" value="2">По возрастанию</option>
+                    <option class="selectName" value="3">По убыванию</option>
+                </select>
+            </section>
+        </div>
+
+        <div class="row" id="card-block">
+        </div>
+    </div>
+    <div class="author-block-name" id="authorBlockId">
+        <p class="card-block-name card-block-name-author">Авторы</p>
+        <label class="select-label">Автор:</label>
+        <select id="selectNameAuthor" class="cs-select cs-skin-rotate card-select">
+            <option class="selectName" value="1">Не выбрано</option>
+            <option class="selectName" value="2">По возрастанию</option>
+            <option class="selectName" value="3">По убыванию</option>
+        </select>
+
+        <ol id="author-block">
+            <li class="author-block__name">famous ferret</li>
+            <div class="row" id="author-card-block">
+                <div class="col-4">
+                <div class="card">
+                    <div class="card-image">
+                        <button class="card__btn-close"></button>
+                        <button class="card__btn-copy"></button>
+                        <img class="card-img-top" src="https://placekitten.com/538/525" alt="..."></div>
+                    <div class="card__name">gnat</div>
+                    <div class="card-body">
+                        <div class="card__username">distinct deer</div>
+                    </div>
+                </div>
+            </div>
+        </ol>
+    </div>
+</div>
+</body>
+<!-- End Content -->
+
+<!-- End Footer -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+<script src="js/name.js"></script>
+</body>
+</html>
